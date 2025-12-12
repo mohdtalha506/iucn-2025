@@ -112,9 +112,14 @@ async function findToolPageRange({ headingText, pdfUrl }) {
       }
     }
 
-    const result = {
-      startPage: startPage || 1,
-      endPage: endPage || (startPage ? startPage + 1 : 1),
+    // const result = {
+    //   startPage: startPage || 1,
+    //   endPage: endPage || (startPage ? startPage + 1 : 1),
+    //   numPages: pdf.numPages
+    // };
+     const result = {
+      startPage:  1,
+      endPage: 2,
       numPages: pdf.numPages
     };
     

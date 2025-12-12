@@ -47,7 +47,7 @@ import { filterTools, findToolById } from "../utils/filteredComponents";
 import { showSpinner } from "../utils/showSpinner";
 import FilterDropdown from "../utils/FilterDropdown";
 import RightSidebarFilters from "../components/NewComponents/RightSidebarFilters";
-import ToolPdfViewer from "../components/Tools/ToolPdfViewer";
+
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchSolutionsFor, setSearchSolutionsFor] = useState("");
