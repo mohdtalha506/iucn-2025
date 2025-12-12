@@ -1,23 +1,9 @@
-import React from "react";
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/PCAKnowledge Logo.png";
 import "../../tools.css"
-const Section = ({ label, value }) => {
-  if (!value) return null;
-
-  return (
-    <Box>
-      <Text fontWeight="bold" color="#2d735c" textTransform="uppercase">
-        {label}
-      </Text>
-      <Text mt={1} whiteSpace="pre-line">
-        {value}
-      </Text>
-    </Box>
-  );
-};
-
+import ToolPdfViewer from "./ToolPdfViewer";
 // Utility function to convert newline-separated text into a list of strings
 const parseMultiPointText = (text) => {
   if (!text) return [];
@@ -33,7 +19,7 @@ const ToolDetail = ({ tool, logoDisplay = false }) => {
       </Box>
     );
   }
-
+ const [pdfModalOpen, setPdfModalOpen] = useState(false);
   // Parse multi-point fields into arrays
   const parsedStructure = parseMultiPointText(tool.Structure_and_function);
   const parsedSkills = parseMultiPointText(tool.Skill_And_Resources_Required);
@@ -66,6 +52,21 @@ const ToolDetail = ({ tool, logoDisplay = false }) => {
             >
               {/* Dynamically extract the category from the tool object */}
               <h3>{tool.category}</h3>
+<Button
+  size="sm"
+  colorScheme="blue"
+  onClick={() => setPdfModalOpen(true)}
+>
+  View Tool
+</Button>
+
+{/* <ToolPdfViewer
+  pageStart={tool.pdfPageStart}
+  isOpen={pdfModalOpen}
+  pageEnd={tool.pdfPageEnd}
+  category={tool.category}
+  onClose={() => setPdfModalOpen(false)}
+/> */}
             </div>
             {/* Note: The specific sub-category header (h4) is missing from your Tool 1 JSON 
             but is in your original structure HTML. We skip it for now or rely on CSS/JS logic to derive it 

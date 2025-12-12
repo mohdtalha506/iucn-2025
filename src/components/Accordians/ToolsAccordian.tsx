@@ -10,23 +10,31 @@ import {
   Button,
   Link,
 } from "@chakra-ui/react";
-import { LinkIcon } from "@chakra-ui/icons";
+import { useAccordionContext } from "../../context/AccordionContext";
 
 const Accordian = (props: any) => {
-  const Reference =
-    typeof props.Reference === "string" ? props.Reference.split("||") : [];
-  const Resources =
-    typeof props.Related_Resources === "string"
-      ? props.Related_Resources.split("||")
-      : []; // const separater = ',';
-  const DocExperience =
-    typeof props.DocExperience === "string"
-      ? props.DocExperience.split("||")
-      : []; // const separater = ',';
+
+  const { isOnline, activeToolAccordion, setActiveToolAccordion } = useAccordionContext();
+
+  const accordionId = `tool-${props.Route}`
+  const handleAccordionClick = () => {
+    if (activeToolAccordion === accordionId) {
+      // console.log(1);
+      setActiveToolAccordion(null);
+    } else {
+      // console.log(2);
+      setActiveToolAccordion(accordionId);
+    }
+  };
 
   return (
     <>
-      <Accordion allowToggle style={{ backgroundColor: "#212529" }} mb="4">
+      <Accordion
+        allowToggle
+        index={activeToolAccordion === accordionId ? 0 : -1}
+        onChange={() => handleAccordionClick()}
+        allowMultiple={false}
+        style={{ backgroundColor: "#212529" }} mb="4">
         <AccordionItem
           style={{ borderRadius: "15px", border: "1px solid white" }}
           textAlign={"justify"}

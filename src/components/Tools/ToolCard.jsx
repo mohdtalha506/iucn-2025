@@ -1,7 +1,8 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import Accordian from "../Accordians/ToolsAccordian";
 import { matchesSearchTerm } from "../../utils/filteredComponents";
+import ToolPdfViewer from "./ToolPdfViewer";
 
 const highlightText = (value, searchTerm) => {
   if (!searchTerm || typeof value !== "string") return value;
@@ -35,9 +36,17 @@ const ToolCard = ({ tool, searchTerm = "", onSelect }) => {
 
   if (!shouldRender) return null;
 
+  
+   const [pdfModalOpen, setPdfModalOpen] = useState(false);
   const handleClick = () => {
+    setPdfModalOpen(true)
+    return
     if (onSelect) onSelect(tool.id);
   };
+
+  const handleClose = () =>{
+    setPdfModalOpen(false)
+  }
 
   return (
     <Box color="black">
@@ -60,6 +69,14 @@ const ToolCard = ({ tool, searchTerm = "", onSelect }) => {
         Reference={tool.Reference}
         Route={tool.route}
       />
+                    <ToolPdfViewer
+  pageStart={tool?.pdfPageStart}
+  isOpen={pdfModalOpen}
+  pageEnd={tool?.pdfPageEnd}
+  tool={tool}
+  category={tool?.category}
+  onClose={() => handleClose()}
+/>
     </Box>
   );
 };

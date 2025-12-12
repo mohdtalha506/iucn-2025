@@ -47,7 +47,7 @@ import { filterTools, findToolById } from "../utils/filteredComponents";
 import { showSpinner } from "../utils/showSpinner";
 import FilterDropdown from "../utils/FilterDropdown";
 import RightSidebarFilters from "../components/NewComponents/RightSidebarFilters";
-
+import ToolPdfViewer from "../components/Tools/ToolPdfViewer";
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchSolutionsFor, setSearchSolutionsFor] = useState("");
@@ -165,17 +165,17 @@ const Home = () => {
   };
 
 
-console.log(isFromCategory,"isFromCategory");
-console.log(searchTerm,"searchTerm");
-console.log(searchMenu,"searchMenu");
-console.log(searchInput,"searchInput");
-console.log(titleHeading,"titleHeading");
-console.log(isClicked,"isClicked");
-console.log(selectedTool,"selectedTool");
-console.log(searchSolutionsFor,"solution for");
-console.log(isSolutionsTabClicked,"show both tabs");
-console.log(isSolutionsTabClicked,"isSolutionsTabClicked");
-console.log(filteredTools,"filteredTools");
+// console.log(isFromCategory,"isFromCategory");
+// console.log(searchTerm,"searchTerm");
+// console.log(searchMenu,"searchMenu");
+// console.log(searchInput,"searchInput");
+// console.log(titleHeading,"titleHeading");
+// console.log(isClicked,"isClicked");
+// console.log(selectedTool,"selectedTool");
+// console.log(searchSolutionsFor,"solution for");
+// console.log(isSolutionsTabClicked,"show both tabs");
+// console.log(isSolutionsTabClicked,"isSolutionsTabClicked");
+// console.log(filteredTools,"filteredTools");
 
 
   const handleSearch = () => {

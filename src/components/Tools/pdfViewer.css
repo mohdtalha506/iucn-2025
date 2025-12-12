@@ -1,0 +1,17 @@
+.react-pdf__Page__annotations {
+  pointer-events: auto !important;
+}
+
+.react-pdf__Page__textContent {
+  user-select: text !important;
+}
+
+.annotationLayer a {
+  cursor: pointer !important;
+}
+
+.enhanced-pdf canvas {
+  filter: saturate(2.2) contrast(0.9);
+  mix-blend-mode: multiply;
+  background: white;
+}

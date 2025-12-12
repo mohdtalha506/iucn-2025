@@ -18,7 +18,9 @@
     "REVIEWS": "NA",
     "Documented_Experience": "It is likely that most of the uses of this instrument in a development cooperation context have not been documented.",
     "RELATED RESOURCES / FURTHER READING": "The United Nations Information Portal on Multilateral Environmental Agreements (InforMEA)\nA more detailed description of ECOLEX is included in IUCN (2012).\nIUCN Knowledge Products -The basis for a partnership to support the functions and work programme of IPBES Gland, Switzerland IUCN 72 pp Accessed on 7 September 2018",
-    "route": "1"
+    "route": "1",
+    "pdfPageStart": 1,
+    "pdfPageEnd": 2
   },
   {
     "category": "3.1 POLICY AND LEGAL FRAMEWORK",
